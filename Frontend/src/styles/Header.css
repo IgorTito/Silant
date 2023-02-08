@@ -1,7 +1,9 @@
+/*#163E6C, #D20A11, #EBE6D6.*/
 header {
-    color: white;
-    background: rgba(0, 0, 0, 0.75);
-    height: 50px;
+    border-radius: 15px;
+    color: #EBE6D6;
+    background: #163E6C;
+    height: 150px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -9,12 +11,14 @@ header {
     margin: 0 auto;
 }
 
+
 #btn-head {
     margin-right: 5%;
 }
 
 h2{
-    padding-right: 10%;
+    background-color: #4690e5;
+    border-radius: 10px;
 }
 
 

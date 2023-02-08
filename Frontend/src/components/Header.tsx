@@ -5,6 +5,7 @@ import {Button, Modal} from "react-bootstrap";
 import {ApiError, AuthService, UsgroupService} from "../api";
 
 
+
 function Header({setIsLoggedIn, isLoggedIn, setToken, setName, setCatUser}:any) {
 
     const [showModal, setShow] = useState(false);
@@ -54,22 +55,24 @@ function Header({setIsLoggedIn, isLoggedIn, setToken, setName, setCatUser}:any) 
     return (
        <header>
            <img className="logo" src={logo} alt="логотип" />
-           <h2 className="text-header">Электронная сервисная книжка "Мой Силант"</h2>
+           <div className="text-footer1">+ 7 (8352) 20-12-09, @telegram</div>
+
+
            { isLoggedIn !== 'true' &&
            <>
-               <Button id="btn-head" variant="outline-light" onClick={handleShow}>
+               <Button id="btn-head" variant="info" onClick={handleShow}>
                    Войти
                </Button>
                <Modal className="modal-sm" show={showModal} onHide={handleClose}>
                    <Modal.Header closeButton>
-                       <Modal.Title>Авторизация</Modal.Title>
+                       <Modal.Title>Выполнить вход</Modal.Title>
                    </Modal.Header>
                    <Modal.Body>
                        <form>
-                           <p>Логин:</p>
+                           <p>Логин</p>
                            <input type="text" value={login}
                                   onChange={e => setLogin(e.target.value)}></input>
-                           <p>Пароль:</p>
+                           <p>Пароль</p>
                            <input type="password" value={pass}
                                   onChange={e => setPass(e.target.value)}></input>
                        </form>

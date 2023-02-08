@@ -146,7 +146,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
             window.location.reload();
         }).catch((err:ApiError) => {
             console.log(JSON.stringify(err));
-            alert('Все поля обязательны для заполнения. У вас есть незаполненые поля.');
+            alert('Заполните все поля');
         })
     }
 
@@ -175,17 +175,17 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                 >
                     <Modal.Header closeButton>
                         <Modal.Title id="example-custom-modal-styling">
-                            Добавление информации о новой машине
+                            Заполните таблицу
                         </Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <div className="table1">
                             <h5>Технические характеристики</h5>
-                            <Table striped bordered hover className={"table12"} size="sm">
+                            <Table striped bordered hover variant="info" className={"table12"} size="sm">
                                 <thead>
                                 <tr>
-                                    <th>Зав. № машины</th>
-                                    <th>Модель машины</th>
+                                    <th>Заводской №</th>
+                                    <th>Модель техники</th>
                                     <th>Модель двигателя</th>
                                     <th>Зав. № двигателя</th>
                                     <th>Модель трансмиссии</th>
@@ -201,7 +201,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                         <Form.Select aria-label="" size="sm"
                                                      onChange={(event) =>setIModM(event.target.value)}>
                                             <option defaultValue='' hidden>
-                                                Выберите...
+                                                Выбрать..
                                             </option>
                                             {modM && modM.map((i) => {
                                                 return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -212,7 +212,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                         <Form.Select aria-label="" size="sm"
                                                      onChange={(event) =>setIModE(event.target.value)}>
                                             <option defaultValue='' hidden>
-                                                Выберите...
+                                                Выбрать..
                                             </option>
                                             {modE && modE.map((i) => {
                                                 return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -227,7 +227,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                         <Form.Select aria-label="" size="sm"
                                                      onChange={(event) =>setIModT(event.target.value)}>
                                             <option defaultValue='' hidden>
-                                                Выберите...
+                                                Выбрать..
                                             </option>
                                             {modT && modT.map((i) => {
                                                 return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -247,7 +247,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                     <th>Зав. № ведущего моста</th>
                                     <th>Модель управляемого моста</th>
                                     <th>Зав. № управляемого моста</th>
-                                    <th>Договор поставки №, дата</th>
+                                    <th>Покупатель</th>
                                     <th>Дата отгрузки с завода</th>
                                 </tr>
                                 </thead>
@@ -256,7 +256,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                         <Form.Select aria-label="" size="sm"
                                                      onChange={(event) =>setIModD(event.target.value)}>
                                             <option defaultValue='' hidden>
-                                                Выберите...
+                                                Выбрать..
                                             </option>
                                             {modD && modD.map((i) => {
                                                 return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -271,7 +271,7 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                         <Form.Select aria-label="" size="sm"
                                                      onChange={(event) =>setIModS(event.target.value)}>
                                             <option defaultValue='' hidden>
-                                                Выберите...
+                                                Выбрать..
                                             </option>
                                             {modS && modS.map((i) => {
                                                 return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -292,13 +292,13 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                                     </td>
                                 </tr></tbody>
                             </Table>
-                            <h5>Комплектация и иные сведения</h5>
+                            <h5>Дополнительно</h5>
                             <Table striped bordered hover className={"table12"} size="sm">
                                 <thead>
                                 <tr>
                                     <th>Грузополучатель (конечный потребитель)</th>
                                     <th>Адрес поставки (эксплуатации)</th>
-                                    <th>Комплектация (доп. опции)</th>
+                                    <th>Комплектация (опции)</th>
                                     <th>Сервисная компания</th>
                                     <th>Клиент</th>
                                 </tr>
@@ -342,10 +342,10 @@ export default function MachineListPrivate({isLoggedIn, catUser }: any) {
                             </Table>
                         </div>
                         <div id='button'>
-                            <Button variant="outline-secondary" onClick={handleSave}>
+                            <Button variant="info" onClick={handleSave}>
                                 Сохранить
                             </Button>
-                            <Button variant="outline-secondary" onClick={() => setShow(false)}>
+                            <Button variant="info" onClick={() => setShow(false)}>
                                 Отменить
                             </Button>
                         </div>

@@ -11,6 +11,13 @@
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border: 1px solid #000;
+    display: block;
+    background-color: #EBE6D6;
 }
 
 #but-muchitem1 {

@@ -8,15 +8,15 @@ function NavigationBar({catUser, name}: any ) {
     console.log(catUser)
     return (
         <div>
-            <Navbar bg="light" expand="lg">
+            <Navbar bg="light" variant="black">
                 <Container >
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
                             <Navbar.Brand aria-disabled></Navbar.Brand>
-                            <Nav.Link href="/">Техника</Nav.Link>
-                            <Nav.Link href="/maintenance">Техническое обслуживание</Nav.Link>
+                            <Nav.Link href="/">Модель</Nav.Link>
                             <Nav.Link href="/claim">Рекламации</Nav.Link>
+                            <Nav.Link href="/maintenance">ТО</Nav.Link>
                             {catUser === 'MG' &&
                                 <NavDropdown title="Справочники" id="basic-nav-dropdown"><NavDropdown.Item
                                     href="/modelmachine">Модель машины</NavDropdown.Item>
@@ -34,13 +34,13 @@ function NavigationBar({catUser, name}: any ) {
                             }
                         </Nav>
                         { catUser === 'MG' &&
-                            <div id='user'>Менеджер: {name}</div>
+                            <div id='user'>Менеджер {name}</div>
                         }
                         { catUser === 'CL' &&
-                            <div id='user'>Клиент: {name}</div>
+                            <div id='user'>Клиент {name}</div>
                         }
                         { catUser === 'SK' &&
-                            <div id='user'>Сервисная компания: {name}</div>
+                            <div id='user'>Сервисная компания {name}</div>
                         }
                     </Navbar.Collapse>
                 </Container>

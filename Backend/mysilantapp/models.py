@@ -38,6 +38,8 @@ class ReferenceBook(models.Model):
         return f'{self.title}'
 
 
+
+
 class ModelMachine(ReferenceBook):
     pass
 

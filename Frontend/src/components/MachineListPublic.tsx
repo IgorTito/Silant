@@ -46,21 +46,23 @@ export default function MachineListPublic() {
 
     return (
         <div>
-            <h3>Информация о комплектации и технических характеристиках техники Силант</h3>
+            <h2 className="text-header">Электронная сервисная книжка "Мой Силант"</h2>
+            <h3>Проверьте комплектация и технические характеристики техники Силант</h3>
             <Navbar  id="filter1">
-                <Container fluid>
-                        <Form className="d-flex">
+                <Container fluid >
+                        <Form className="d-inline-flex p-2 bd-highlight">
                             <Form.Control
                                 type="search"
-                                placeholder="Введите зав. № машины"
+                                placeholder="Заводской номер"
                                 className="me-2"
                                 aria-label="Search"
                                 value={sernum} onChange={e => setSernum(e.target.value)}
                             />
-                            <Button variant="outline-secondary" onClick={loadMachineFilter}>Поиск</Button>
+                            <Button variant="info" onClick={loadMachineFilter}>Найти</Button>
                         </Form>
                 </Container>
             </Navbar>
+            <h3>Информация о комплектации и технических характеристиках Вашей техники</h3>
             <div className="table1">
                 <Table striped bordered hover className={"table12"} size="sm">
                     <thead><tr><th>Заводской номер машины</th><th>Модель машины</th><th>Модель двигателя</th>
@@ -77,16 +79,16 @@ export default function MachineListPublic() {
                     { JSON.stringify(machines) === '[]'  &&
                         <tbody>
                         <tr className={"item"}>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
-                            <td>Данных о машине с таким заводским номером нет</td>
+                            <td>данных о машине с таким заводским номером нет в системе</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
+                            <td>-</td>
                         </tr>
                         </tbody>
                     }

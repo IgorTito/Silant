@@ -238,11 +238,7 @@ function MachineItem({catUser}:any) {
     return (
         <div >
            <Stack  direction="horizontal" gap={5}>
-               <Container id='cont'>
-                   <div className="bg-light border">
-                        <h4>Машина № {MachineItem.id}</h4>
-                   </div>
-               </Container>
+
                <Container id='cont'>
                    <div className="bg-light border">
                        <h4>Заводской номер: {MachineItem.serNumM}</h4>
