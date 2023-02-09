@@ -2,6 +2,8 @@
     text-align: center;
     padding-left: 5%;
     padding-right: 5%;
+    border-collapse: separate;
+    border-width: 5px;
 }
 
 

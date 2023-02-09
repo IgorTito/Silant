@@ -347,7 +347,7 @@ function MachineItem({catUser}:any) {
                                                     <th>Зав. № ведущего моста</th>
                                                     <th>Модель управляемого моста</th>
                                                     <th>Зав. № управляемого моста</th>
-                                                    <th>Договор поставки №, дата</th>
+                                                    <th>Покупатель</th>
                                                     <th>Дата отгрузки с завода</th>
                                                 </tr>
                                                 </thead>
@@ -501,7 +501,7 @@ function MachineItem({catUser}:any) {
                             <Table striped bordered hover className={"table12"} size="sm">
                                 <thead>
                                 <tr>
-                                    <th>Договор поставки №, дата</th>
+                                    <th>Покупатель</th>
                                     <th>Дата отгрузки с завода</th>
                                     <th>Грузополучатель (конечный потребитель)</th>
                                     <th>Адрес поставки (эксплуатации)</th>
@@ -548,9 +548,9 @@ function MachineItem({catUser}:any) {
                                         <Table striped bordered hover className={"table22"} size="sm">
                                             <thead>
                                             <tr>
-                                                <th>Вид технического обслуживания</th>
-                                                <th>Дата проведения технического обслуживания</th>
-                                                <th>Наработка, м/ час</th>
+                                                <th>Вид ТО</th>
+                                                <th>Дата проведения ТО</th>
+                                                <th>Наработка, м/час</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -558,7 +558,7 @@ function MachineItem({catUser}:any) {
                                                 <Form.Select aria-label="" size="sm"
                                                              onChange={(event) =>setTypMainID(event.target.value)}>
                                                     <option defaultValue='' hidden>
-                                                        Выберите...
+                                                        Выберите..
                                                     </option>
                                                     {typMains && typMains.map((i) => {
                                                         return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -580,7 +580,7 @@ function MachineItem({catUser}:any) {
                                             <tr>
                                                 <th>Номер заказ-наряда</th>
                                                 <th>Дата заказа-наряда</th>
-                                                <th>Организация, проводившая техническое обслуживание: сотрудник</th>
+                                                <th>Организация, проводившая ТО</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -596,7 +596,7 @@ function MachineItem({catUser}:any) {
                                                 <Form.Select aria-label="" size="sm"
                                                              onChange={(event) =>setSerComId(event.target.value)}>
                                                     <option defaultValue='' hidden>
-                                                        Выберите...
+                                                        Выберите..
                                                     </option>
                                                     {serCom && serCom.map((i) => {
                                                         return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -607,10 +607,10 @@ function MachineItem({catUser}:any) {
                                         </Table>
                                     </div>
                                     <div id='button'>
-                                        <Button variant="outline-secondary" onClick={saveMan}>
+                                        <Button variant="outline-primary" onClick={saveMan}>
                                             Сохранить
                                         </Button>
-                                        <Button variant="outline-secondary" onClick={handleClose}>
+                                        <Button variant="outline-primary" onClick={handleClose}>
                                             Отменить
                                         </Button>
                                     </div>
@@ -622,12 +622,12 @@ function MachineItem({catUser}:any) {
                                 <thead>
                                 <tr>
                                     <th>№ п/п</th>
-                                    <th>Вид технического обслуживания</th>
-                                    <th>Дата проведения технического обслуживания</th>
-                                    <th>Наработка, м/ час</th>
+                                    <th>Вид ТО</th>
+                                    <th>Дата проведения ТО</th>
+                                    <th>Наработка, м/час</th>
                                     <th>Номер заказ-наряда</th>
                                     <th>Дата заказа-наряда</th>
-                                    <th>Организация, проводившая техническое обслуживание: сотрудник</th>
+                                    <th>Организация, проводившая ТО</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -686,7 +686,7 @@ function MachineItem({catUser}:any) {
                                                 <Form.Select aria-label="" size="sm"
                                                              onChange={(event) =>setTypFailID(event.target.value)}>
                                                     <option defaultValue='' hidden>
-                                                        Выберите...
+                                                        Выберите..
                                                     </option>
                                                     {typFails && typFails.map((i) => {
                                                         return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -705,7 +705,7 @@ function MachineItem({catUser}:any) {
                                                 <th>Способ восстановления</th>
                                                 <th>Используемые запасные части</th>
                                                 <th>Дата восстановления</th>
-                                                <th>Организация, проводившая техническое обслуживание: сотрудник</th>
+                                                <th>Время простоя техники</th>
                                             </tr>
                                             </thead>
                                             <tbody>
@@ -713,7 +713,7 @@ function MachineItem({catUser}:any) {
                                                 <Form.Select aria-label="" size="sm"
                                                              onChange={(event) =>setRecMetID(event.target.value)}>
                                                     <option defaultValue='' hidden>
-                                                        Выберите...
+                                                        Выберите..
                                                     </option>
                                                     {recMets && recMets.map((i) => {
                                                         return <option key={i.id} value={i.id}>{i.title}</option>;
@@ -729,15 +729,8 @@ function MachineItem({catUser}:any) {
                                                               onChange={e => setDateRec(e.target.value)}/>
                                             </td>
                                             <td>
-                                                <Form.Select aria-label="" size="sm"
-                                                             onChange={(event) =>setSerComId(event.target.value)}>
-                                                    <option defaultValue='' hidden>
-                                                        Выберите...
-                                                    </option>
-                                                    {serCom && serCom.map((i) => {
-                                                        return <option key={i.id} value={i.id}>{i.title}</option>;
-                                                    })});
-                                                </Form.Select>
+                                                <Form.Control size="sm" type="text"
+                                                              onChange={e => setSpPart(e.target.value)}/>
                                             </td>
                                             </tbody>
                                         </Table>

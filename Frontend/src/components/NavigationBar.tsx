@@ -8,18 +8,18 @@ function NavigationBar({catUser, name}: any ) {
     console.log(catUser)
     return (
         <div>
-            <Navbar bg="light" variant="black">
+            <Navbar bg="light" expand="lg">
                 <Container >
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav fill variant="tabs">
                             <Navbar.Brand aria-disabled></Navbar.Brand>
-                            <Nav.Link href="/">Модель</Nav.Link>
-                            <Nav.Link href="/claim">Рекламации</Nav.Link>
-                            <Nav.Link href="/maintenance">ТО</Nav.Link>
+                            <Nav.Link href="/"><h4>Модель</h4></Nav.Link>
+                            <Nav.Link href="/claim"><h4>Рекламации</h4></Nav.Link>
+                            <Nav.Link href="/maintenance"><h4>ТО</h4></Nav.Link>
                             {catUser === 'MG' &&
-                                <NavDropdown title="Справочники" id="basic-nav-dropdown"><NavDropdown.Item
-                                    href="/modelmachine">Модель машины</NavDropdown.Item>
+                                <h4><NavDropdown title="Справочники" id="nav-dropdown">
+                                    <NavDropdown.Item href="/modelmachine">Модель машины</NavDropdown.Item>
                                     <NavDropdown.Item href="/modelengine">Модель двигателя</NavDropdown.Item>
                                     <NavDropdown.Item href="/modeltransmission">Модель трансмиссии</NavDropdown.Item>
                                     <NavDropdown.Item href="/modeldriveaxle">Модель ведущего моста</NavDropdown.Item>
@@ -30,17 +30,17 @@ function NavigationBar({catUser, name}: any ) {
                                     <NavDropdown.Item href="/typefailure">Характер отказа</NavDropdown.Item>
                                     <NavDropdown.Item href="/recoverymethod">Способ восстановления</NavDropdown.Item>
                                     <NavDropdown.Item href="/servicecompany">Сервисные компании</NavDropdown.Item>
-                                </NavDropdown>
+                                </NavDropdown></h4>
                             }
                         </Nav>
                         { catUser === 'MG' &&
-                            <div id='user'>Менеджер {name}</div>
+                            <div id='user'>Текущий пользователь - Менеджер {name}</div>
                         }
                         { catUser === 'CL' &&
-                            <div id='user'>Клиент {name}</div>
+                            <div id='user'>Текущий пользователь - Клиент {name}</div>
                         }
                         { catUser === 'SK' &&
-                            <div id='user'>Сервисная компания {name}</div>
+                            <div id='user'>Текущий пользователь - Сервисная компания {name}</div>
                         }
                     </Navbar.Collapse>
                 </Container>
