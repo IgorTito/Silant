@@ -38,7 +38,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path(
-        'swagger-ui/',
+        'api/',
         TemplateView.as_view(
             template_name='swaggerui/swaggerui.html',
             extra_context={'schema_url': 'openapi-schema'}
